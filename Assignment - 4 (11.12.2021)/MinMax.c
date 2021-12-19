@@ -1,47 +1,13 @@
 //write c program to find maximum and minimum element in array using recursion
 
 #include <stdio.h>
-#include <limits.h>
 
-int MaxNum(int arr[20], int i, int size)
-{
-    int maxVal = INT_MIN;
-
-    if(i < size)
-    {
-        if(arr[i] >= maxVal)
-        {
-            maxVal = arr[i];
-        }
-
-        MaxNum(arr, i + 1, size);
-    }
-
-    return maxVal;
-}
-
-int MinNum(int arr[20], int i, int size)
-{
-    int minVal = INT_MAX;
-
-    if(i < size)
-    {
-        if(arr[i] <= minVal)
-        {
-            minVal = arr[i];
-        }
-
-        MinNum(arr, i, size);
-    }
-    
-    return minVal;
-
-}
+int MaxNum(int[], int, int);
+int MinNum(int[], int, int);
 
 int main()
 {
-    int arr[20], size, maxVal, minVal, index = 0;
-
+    int arr[20], size, min, max;
     printf("Enter the size : ");
     scanf("%d", &size);
 
@@ -51,12 +17,56 @@ int main()
         scanf("%d", &arr[i]);
     }
 
-    maxVal = MaxNum(arr, index, size);
-    minVal = MinNum(arr, index, size);
+    max = MaxNum(arr, 0, size);
+    min = MinNum(arr, 0, size);
 
-    printf("Max Val : %d \n", maxVal);
-    printf("Min Val : %d \n", minVal);
+    printf("Max number : %d\n", max);
+    printf("Min number : %d\n", min);
 
     return 0;
 }
 
+
+int MaxNum(int arr[], int i, int n)
+{
+    int c;
+    if(i >= n - 2)
+    {
+        if(arr[i] > arr[i + 1])
+        {
+            return arr[i];
+        } else {
+            return arr[i + 1];
+        }
+    }
+
+    c = MaxNum(arr, i + 1, n);
+    if(arr[i] > c)
+    {
+        return arr[i];
+    } else {
+        return c;
+    }
+}
+
+int MinNum(int arr[], int i, int n)
+{
+    int c;
+    if(i >= n - 2)
+    {
+        if(arr[i] < arr[i + 1])
+        {
+            return arr[i];
+        } else {
+            return arr[i + 1];
+        }
+    }
+
+    c = MinNum(arr, i + 1, n);
+    if(arr[i] < c)
+    {
+        return arr[i];
+    } else {
+        return c;
+    }
+}
