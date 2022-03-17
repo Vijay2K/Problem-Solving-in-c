@@ -1,4 +1,15 @@
-//Inverse Half triangle
+
+/*
+output
+
+Enter the number : 5
+* * * * *
+* * * *
+* * *
+* *
+*
+
+*/
 
 #include <stdio.h>
 
@@ -13,7 +24,7 @@ int main()
 	{
 		for(j = 0; j < i; j++)
 		{
-			printf("*");
+			printf("* ");
 		}
 		
 		printf("\n");

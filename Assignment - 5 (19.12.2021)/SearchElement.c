@@ -6,7 +6,8 @@
 int main()
 {
 	int arr[20], size, i, n;
-	int *p = &arr;
+	int *p;
+	p = &arr;
 	int hasFound;
 	
 	printf("Enter the size : ");

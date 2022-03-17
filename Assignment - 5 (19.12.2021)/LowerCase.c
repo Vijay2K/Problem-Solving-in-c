@@ -1,4 +1,4 @@
-//Write a C program to convert lowercase string to uppercase.
+//Write a C program to convert Uppercase string to lowercase.
 
 #include <stdio.h>
 #include <string.h>

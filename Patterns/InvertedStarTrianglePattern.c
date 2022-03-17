@@ -1,4 +1,14 @@
-//print inverted star triangle pattern
+/*
+output
+
+Enter the number : 5
+* * * * *
+ * * * *
+  * * *
+   * *
+    *
+
+*/
 
 #include <stdio.h>
 

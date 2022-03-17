@@ -1,4 +1,14 @@
-//inverse star pattern
+/*
+output
+
+Enter the number : 5
+* * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+
+*/
 
 #include <stdio.h>
 
